@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 10: invalid syntax
-    Transform("quarto_thomas.png"zoom = 1.0)
-                                  ^
+File "game/faculdade.rpy", line 105: choice menuitem expects a non-empty block.
+    "Porque é a melhor.":
+                         ^
+
+File "game/faculdade.rpy", line 131: choice menuitem expects a non-empty block.
+    "Neil Armstrong.":
+                      ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Jul 15 18:31:28 2025
+Tue Jul 22 00:14:49 2025

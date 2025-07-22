@@ -1,24 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/sonho.rpy", line 4, in script
-    thomas "Eu não consigo esquecer você."
-Exception: Sayer 'thomas' is not defined.
+  File "game/finales2.rpy", line 28, in script
+    $ legal += 1
+  File "game/finales2.rpy", line 28, in <module>
+    $ legal += 1
+NameError: name 'legal' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/sonho.rpy", line 4, in script
-    thomas "Eu não consigo esquecer você."
-  File "C:\Users\thoma\Downloads\renpy-8.3.6-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\thoma\Downloads\renpy-8.3.6-sdk\renpy\ast.py", line 583, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "C:\Users\thoma\Downloads\renpy-8.3.6-sdk\renpy\ast.py", line 472, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'thomas' is not defined.
+  File "game/finales2.rpy", line 28, in script
+    $ legal += 1
+  File "C:\Users\thoma\Downloads\renpy-8.3.6-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\thoma\Downloads\renpy-8.3.6-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/finales2.rpy", line 28, in <module>
+    $ legal += 1
+NameError: name 'legal' is not defined
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
-8 Ways to get Auak back 1.0
-Tue Jul 15 18:27:32 2025
+ 
+Tue Jul 22 00:57:48 2025
