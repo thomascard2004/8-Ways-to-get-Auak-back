@@ -14,7 +14,7 @@ label celular:
 
 screen celular():
 
-    add "celular":
-        xpos 0.5
-        ypos 0.5
+    add "auakexposed":
+        xalign 0.5
+        yalign 0.5
     modal True

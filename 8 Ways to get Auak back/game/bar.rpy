@@ -1,7 +1,8 @@
 label bar_mesquita:
 
     scene bar_mesquita
-
+#12
+    play sound "voz/12.wav"
     eu "Esse lugar sempre me faz pensar nele."
 
     call screen barmesquita_tela

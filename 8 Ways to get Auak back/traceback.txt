@@ -1,22 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/finales2.rpy", line 39, in script
-    jump cena3_sonho
-ScriptError: could not find label 'cena3_sonho'.
+  File "game/faculdade.rpy", line 136, in script
+    jump GAMEOVER
+ScriptError: could not find label 'GAMEOVER'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/finales2.rpy", line 39, in script
-    jump cena3_sonho
-  File "C:\Users\thoma\Downloads\renpy-8.3.6-sdk\renpy\ast.py", line 1712, in execute
+  File "game/faculdade.rpy", line 136, in script
+    jump GAMEOVER
+  File "C:\Users\Meu Computador\Downloads\renpy-8.3.7-sdk\renpy\ast.py", line 1712, in execute
     rv = renpy.game.script.lookup(target)
-  File "C:\Users\thoma\Downloads\renpy-8.3.6-sdk\renpy\script.py", line 1103, in lookup
+  File "C:\Users\Meu Computador\Downloads\renpy-8.3.7-sdk\renpy\script.py", line 1103, in lookup
     raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'cena3_sonho'.
+ScriptError: could not find label 'GAMEOVER'.
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
  
-Tue Jul 22 22:14:55 2025
+Wed Jul 23 19:36:03 2025

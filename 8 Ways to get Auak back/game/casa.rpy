@@ -1,14 +1,18 @@
 label cena1_casa:
 
     scene casa_thomas
-
+#6
+    play sound "voz/6.wav"
     eu "Hoje está um dia tão lindo."
-
+#7 
+    play sound "voz/7.wav"
     eu "O que eu quero fazer?"
-
-    eu "Eu poderia andar de bicicleta na ciclovia, e talvez esbarraria com ele."
-
-    eu "Ou eu poderia sair andando, e ver onde vou parar."
+#8
+    play sound "voz/8.wav"
+    eu "Eu poderia andar de bicicleta na ciclovia, talvez eu esbarraria com ele."
+#9
+    play sound "voz/9.wav"
+    eu "Ou eu poderia sair andando, e ver onde eu vou parar."
 
     call screen casa
 

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/faculdade.rpy", line 244: expected statement.
-    renpy.notify("Essa escolha terá impacto direto no futuro.")
-                                                               ^
+File "game/faculdade.rpy", line 338: play requires a file
+    play sound 
+               ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue Jul 22 21:00:19 2025
+Wed Jul 23 19:32:48 2025
