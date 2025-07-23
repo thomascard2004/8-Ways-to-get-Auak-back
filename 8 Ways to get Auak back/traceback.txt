@@ -1,26 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/finales2.rpy", line 28, in script
-    $ legal += 1
-  File "game/finales2.rpy", line 28, in <module>
-    $ legal += 1
-NameError: name 'legal' is not defined
+  File "game/finales2.rpy", line 39, in script
+    jump cena3_sonho
+ScriptError: could not find label 'cena3_sonho'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/finales2.rpy", line 28, in script
-    $ legal += 1
-  File "C:\Users\thoma\Downloads\renpy-8.3.6-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\thoma\Downloads\renpy-8.3.6-sdk\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/finales2.rpy", line 28, in <module>
-    $ legal += 1
-NameError: name 'legal' is not defined
+  File "game/finales2.rpy", line 39, in script
+    jump cena3_sonho
+  File "C:\Users\thoma\Downloads\renpy-8.3.6-sdk\renpy\ast.py", line 1712, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\thoma\Downloads\renpy-8.3.6-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'cena3_sonho'.
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
  
-Tue Jul 22 00:57:48 2025
+Tue Jul 22 22:14:55 2025

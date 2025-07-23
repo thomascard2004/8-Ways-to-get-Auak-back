@@ -1,3 +1,7 @@
+default entrevista = False
+default humilha = False
+default passou = False
+
 label ct_fachada:
 
     scene ct_ufrj
@@ -12,18 +16,17 @@ label ct_fachada:
 
     eu "Isso não é para qualquer um."
 
-    jump ct_dentro
+    jump ct_dentro1
 
-label ct_dentro:
+label ct_dentro1:
 
     scene ct_dentro
 
-
     eu "Pra onde eu quero ir?"
 
-    call screen ct_dentro
+    call screen ct_dentro1
 
-screen ct_dentro():
+screen ct_dentro1():
 
     modal True
 
@@ -32,7 +35,7 @@ screen ct_dentro():
         yalign 0.5
         idle "setacima"
         hover "setacima_hover"
-        action Jump("corredor_H")
+        action Jump("corredor_H1")
 
     imagebutton:
         xalign 0.9
@@ -42,15 +45,161 @@ screen ct_dentro():
         hover "setadireita_hover"
         action Jump("ct_aeroespacial")
 
-label corredor_H:
+label corredor_H1:
 
     scene corredor_H
 
     eu "Finalmente cheguei no bloco H."
 
-    
+    eu "O que eu faço agora?"
+
+    call screen corredor_H1
+
+screen corredor_H1():
+
+    modal True
+
+    imagebutton:
+        xalign 0.5
+        yalign 1.0
+
+        idle "setabaixo"
+        hover "setabaixo_hover"
+        action Jump("corredor_H2")
+
+label corredor_H2:
+
+    scene salinha_H
+
+    eu "Será que ele está na salinha dessa vez?"
+
+    if entrevista:
+        jump salinha_dentro2
+    jump salinha_dentro1
+
+label salinha_dentro1:
+
+    scene salinha_dentro
+
+    eu "Não tem ninguém aqui, eu posso voltar depois."
+
+    jump ct_dentro1
+
+label salinha_dentro2:
+
+    scene salinha_dentro
+
+    show kaua_chocado at center
+
+    eu "Auak, você está aqui."
+
+    kaua "Você é louco?"
+
+    kaua "Depois de aparecer na minha casa daquele jeito."
+
+    kaua "O que você estava pensando?"
+
+    kaua "E agora, o que você quer?"
+
+    if humilha:
+
+        eu "Você me deve parabéns."
+
+        eu "Eu entrei pra Minerva Aeroespacial."
+
+        eu "Foi bem mais fácil do que você fez parecer."
+
+        eu "Eu só tive que ser decente na entrevista."
+
+        jump finale2_12
+
+    menu:
+        "Como você vai responder?"
+
+        "Ser astuto.":
+            if passou:
+                
+                $ discordia += 1
+                $ print(discordia)
+
+                eu "Fala comigo direito."
+
+                eu "Você está falando com um estimado membro da Minerva Aeroespacial."
+
+                eu "Isso mesmo."
+
+                eu "Eu consegui entrar."
+
+                eu "Mas sorte da próxima vez..."
+
+                jump finale2_12
+
+            hide kaua_chocado
+
+            "Como você quer lacrar alguém se não foi capaz de ser melhor que ele? Seja humilde! Você também fracassou!"
+            jump GAMEOVER
+
+        "Ser paciente.":
+            
+            $ legal += 1
+            $ print(legal)
+
+            if passou:
+                eu "Eu só queria dizer que passei na Minerva Aeroespacial."
+
+                eu "Seria legal se você tentasse de novo e a gente pudesse ser membros juntos."
+
+                eu "Eu posso te dar umas dicas de profissionalismo em entrevistas, sei lá."
+
+                eu "O que você me diz?"
+            
+            eu "Eu só queria dizer que estou com saudades."
+
+            eu "De almoçar juntos."
+
+            eu "De ir embora juntos."
+
+            eu "Saudades de nós dois."
+
+            jump finale2_22
+
+    jump cena3_sonho
+
+label ct_dentro2:
+
+    scene ct_dentro
+
+    eu "Pra onde eu quero ir agora?"
+
+    call screen ct_dentro2
+
+screen ct_dentro2():
+
+    modal True
+
+    imagebutton:
+        xalign 0.1
+        yalign 0.5
+        idle "setacima"
+        hover "setacima_hover"
+        action Jump("corredor_H1")
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 label ct_aeroespacial:
+
+    $ entrevista = True
 
     scene minerva_fora
 
@@ -130,6 +279,10 @@ label minerva_entrevista:
 
         "Pra fazer algo que meu ex-melhor amigo não conseguiu fazer.":
 
+            $ humilha = True
+            $ print(humilha)
+
+            $ renpy.notify("Essa escolha terá impacto direto no futuro.")
             eu "Posso ser sincero?"
 
             entre "Claro, por favor."
@@ -248,12 +401,58 @@ label q4:
 
     show entrevistadora at center
 
+    entre "Qual a sua maior qualidade?"
+
+    menu:
+        entre "Qual a sua maior qualidade?"
+
+        "Perfeccionismo.":
+
+            eu "Eu sou muito perfeccionista."
+
+            eu "Sempre faço de tudo para que meu trabalho seja perfeito."
+
+            jump q5
+
+        "Disruptividade.":
+
+            eu "Eu sou muito disruptivo."
+
+            eu "Eu sempre penso fora da caixa."
+
+            eu "Meu próximo passo é sempre uma surpresa."
+
+            jump q5
+
+        "Excesso de energia.":
+
+            eu "Eu diria que eu sou muito elétrico."
+
+            eu  "A minha bateria nunca acaba."
+
+            jump q5
+
+        "Todas.":
+
+            eu "Eu sou perfeito, tenho todas as qualidades."
+
+            jump q5
+
+
+label q5:
+
+    scene minerva_entrevista
+
+    show entrevistadora at center
+
     entre "Não tenho mais perguntas, você tem alguma pergunta para mim?"
 
     menu:
         entre "Não tenho mais perguntas, você tem alguma pergunta para mim?"
 
         "Como assim?":
+
+            $ passou = True
             eu "Como assim você não tem mais perguntas sobre mim?"
 
             eu "Não ficou interessada em me conhecer melhor?"
@@ -268,6 +467,7 @@ label q4:
 
         "Qual tipo de água você seria?":
 
+            $ humilha = False
             eu "Que tipo de água você seria?"
 
             entre "Que? Porque?"

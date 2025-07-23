@@ -10,9 +10,7 @@ label finale2_1:
 
     "Já tá melhor que *muita gente* por ai. *risadinhas*"
 
-    $ discordia += 1
-
-    jump ct_dentro
+    jump ct_dentro2
 
 
 
@@ -27,7 +25,21 @@ label finale2_2:
 
     "Pelo menos vocês vão ter isso em comum agora."
 
-    $ legal += 1
-
-    jump ct_dentro
+    jump ct_dentro2
             
+
+label finale2_12:
+
+    scene salinha_dentro
+
+    "Você conseguiu sua segunda vingança."
+
+    "Qual é o gosto que fica na boca?"
+
+    jump cena3_sonho
+
+label finale2_22:
+    "Você sabia que não ia ser tão fácil assim."
+
+    "Vai desistir, ou vai tentar de novo?"
+    jump cena3_sonho

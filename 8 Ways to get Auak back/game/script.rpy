@@ -3,6 +3,11 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+default discordia = 0
+
+default legal = 0
+
+#=====================================================================================================
 define kaua = Character("Auak")
 
 define eu = Character("Thomas")
@@ -24,6 +29,8 @@ image kaua_chocado = Transform("kaua_sf.png", zoom = 1.4)
 
 image preto_correndo = Transform("preto_correndo.png", zoom = 1.5)
 image preto_correndo_hover = Transform("preto_correndo.png", zoom = 1.55)
+
+image entrevistadora = Transform("entrevistadora.png", zoom = 1.7)
 #=====================================================================================================
 image fundo_preto = Transform("preto.jpeg", zoom = 1.0)
 
@@ -64,6 +71,10 @@ image minerva_lab = Transform("minerva_lab.png", zoom = 1.25)
 image minerva_entrevista = Transform("minerva_entrevista.png", zoom = 1.25)
 
 image corredor_H = Transform("corredor_H.png", zoom = 1.25)
+
+image salinha_H = Transform("salinha_H.png", zoom = 1.25)
+
+image salinha_dentro = Transform("salinha_dentro.png", zoom = 1.25)
 #=====================================================================================================
 image celular = Transform("celular_thomas.png", zoom = 1.0)
 image celular_hover = Transform("celular_thomas.png", zoom = 1.01)
@@ -79,12 +90,11 @@ image setaesquerda = Transform("setaesquerda.png", zoom = 0.3)
 image setaesquerda_hover = Transform("setaesquerda.png", zoom = 0.33)
 
 image setacima = Transform("setacima.png", zoom = 0.3)
-image setacima_hover = Transform("setacima.png", zoom = 0.3)
+image setacima_hover = Transform("setacima.png", zoom = 0.33)
 
-image entrevistadora = Transform("entrevistadora.png", zoom = 1.7)
+image setabaixo = Transform("setabaixo.png", zoom = 0.3)
+image setabaixo_hover = Transform("setabaixo.png", zoom = 0.33)
 
-transform rotate_button:
-    rotate 360 # Duration of the rotation animation    # Makes the rotation continuous
 # The game starts here.
 
 label start:
@@ -92,7 +102,8 @@ label start:
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
-    jump ct_fachada
+    jump cena1_sonho
+    #jump ct_fachada
     
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images

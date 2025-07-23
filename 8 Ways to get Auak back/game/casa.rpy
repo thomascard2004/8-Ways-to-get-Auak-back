@@ -18,7 +18,6 @@ label cena2_casa:
 
     eu "O dia está tão lindo, mas estou com pressa."
 
-    
 
 screen casa():
 

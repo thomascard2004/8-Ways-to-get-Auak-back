@@ -2,8 +2,6 @@ label cena1_quarto:
 
     scene quarto_thomas
 
-    eu "Nossa..."
-
     eu "Eu realmente sonhei que eu era a Adele?"
 
     eu "E que eu estava cantando pra ele..."

@@ -1,12 +1,12 @@
 label cena1_sonho:
     scene fundo_preto
 
-    #play music "amigoaqui.mp3" loop
+    play music "adele_cortado.mp3"
 
-    eu "ADELE"
+    eu "*cantando como se fosse Adele.*"
 
-    eu "EU TE AMO"
-
+    #eu "EU TE AMO"
+    stop music
     jump cena1_quarto
 
 label cena2_sonho:

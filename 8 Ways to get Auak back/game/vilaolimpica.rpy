@@ -4,7 +4,7 @@ label vila_olimpica:
 
     show preto_correndo at right
 
-    eu "A vila Olímpica...."
+    eu "A vila olímpica...."
 
     eu "A gente vinha aqui juntos no início."
 
